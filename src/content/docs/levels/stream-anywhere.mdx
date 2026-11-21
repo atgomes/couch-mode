@@ -1,0 +1,44 @@
+---
+title: Stream anywhere
+description: Moonlight and Apollo, with a virtual display per device.
+sidebar:
+  label: 6 · Stream anywhere
+  order: 6
+  badge: Draft
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import LevelInfo from '../../../components/LevelInfo.astro';
+
+<LevelInfo time="45 min" difficulty="Hard" />
+
+**Goal:** play from a phone or Steam Deck, with the PC waking up on demand and the picture perfectly sized for each screen.
+
+<Aside type="caution" title="Draft outline">
+To write: Apollo install, Moonlight pairing, Wake-on-LAN from Moonlight, a virtual display profile per client, audio, HDR, streaming outside the home. This is the section that needs the most real testing.
+</Aside>
+
+## Steps
+
+1. TODO: install Apollo and secure its web UI
+2. TODO: pair Moonlight on each device
+3. TODO: wake the PC from Moonlight
+4. TODO: virtual display per client (resolution, refresh rate, HDR)
+5. TODO: audio while streaming vs on the TV
+6. TODO: away from home (Tailscale)
+
+## My devices
+
+| Device | Resolution | Refresh | HDR |
+| --- | --- | --- | --- |
+| LG B5 OLED (local) | TODO | TODO | TODO |
+| Phone | TODO | TODO | TODO |
+| Steam Deck | TODO | TODO | TODO |
+
+## Verify
+
+From each device: wake the PC, connect, and see a full-screen image with no black bars or scaling.
+
+## If it breaks
+
+TODO

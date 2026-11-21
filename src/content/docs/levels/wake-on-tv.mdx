@@ -1,0 +1,42 @@
+---
+title: Wake on TV
+description: Home Assistant powers on the PC when the TV switches to its input.
+sidebar:
+  label: 5 · Wake on TV
+  order: 5
+  badge: Draft
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import LevelInfo from '../../../components/LevelInfo.astro';
+
+<LevelInfo time="20 min" difficulty="Medium" optional />
+
+**Goal:** turn on the TV, switch to the PC's HDMI input, and the PC boots by itself.
+
+This needs Home Assistant and a TV with an integration that reports the active input. Without those, use the phone route in [Stream anywhere](/couch-mode/levels/stream-anywhere/).
+
+<Aside type="caution" title="Draft outline">
+To write: how the TV reports its input, the automation, the delay, the reverse automation, failure modes. Source: my own working automation (LG B5, webOS).
+</Aside>
+
+## You need
+
+- Wake-on-LAN working from full shutdown ([level 1](/couch-mode/levels/hardware/))
+- Home Assistant with the LG webOS integration
+- The `wake_on_lan` integration
+
+## Steps
+
+1. TODO: webOS integration and which entity reports the input
+2. TODO: the automation, triggered by the TV turning on at input 4
+3. TODO: why it waits a few seconds before sending the packet
+4. TODO: reverse automation, so the PC sleeps when the TV is off or switched away
+
+## Verify
+
+PC fully shut down. Turn on the TV, switch to the PC input, and the PC boots.
+
+## If it breaks
+
+TODO: PC already awake, input flapping, packet not arriving.

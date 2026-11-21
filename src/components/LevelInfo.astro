@@ -1,0 +1,68 @@
+---
+// Header strip shown at the top of every level page.
+// No `tested` date means the page is an untested draft; the strip says so.
+interface Props {
+	time?: string;
+	difficulty?: 'Easy' | 'Medium' | 'Hard';
+	optional?: boolean;
+	tested?: string; // ISO date, e.g. 2026-11-17
+	versions?: string[]; // e.g. ['Windows 11 24H2', 'Apollo 0.4.6']
+}
+const { time, difficulty, optional = false, tested, versions = [] } = Astro.props;
+const stars = { Easy: '★☆☆', Medium: '★★☆', Hard: '★★★' };
+---
+
+<div class="level-info" data-state={tested ? 'tested' : 'draft'}>
+	<ul>
+		{time && <li><span>Time</span> {time}</li>}
+		{difficulty && <li><span>Difficulty</span> {stars[difficulty]} {difficulty}</li>}
+		{optional && <li><span>Optional</span> side quest</li>}
+		<li class="status">
+			{
+				tested ? (
+					<>
+						<span>Last tested</span> {tested}
+					</>
+				) : (
+					<>
+						<span>Status</span> Draft, not yet tested
+					</>
+				)
+			}
+		</li>
+	</ul>
+	{versions.length > 0 && <p class="versions">{versions.join(' · ')}</p>}
+</div>
+
+<style>
+	.level-info {
+		border: 1px solid var(--sl-color-gray-5);
+		border-left: 4px solid var(--sl-color-accent);
+		border-radius: 0.25rem;
+		padding: 0.6rem 0.9rem;
+		margin-bottom: 1.5rem;
+		font-size: var(--sl-text-sm);
+	}
+	.level-info[data-state='draft'] {
+		border-left-color: var(--sl-color-orange);
+	}
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin: 0;
+	}
+	li span {
+		color: var(--sl-color-gray-3);
+		margin-right: 0.35em;
+	}
+	.versions {
+		margin: 0.4rem 0 0;
+		color: var(--sl-color-gray-3);
+	}
+</style>

@@ -1,0 +1,39 @@
+---
+title: Hardware & BIOS
+description: What you need, and the BIOS and NIC settings for Wake-on-LAN.
+sidebar:
+  label: 1 · Hardware & BIOS
+  order: 1
+  badge: Draft
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import LevelInfo from '../../../components/LevelInfo.astro';
+
+<LevelInfo time="15 min" difficulty="Easy" />
+
+**Goal:** a PC that can be powered on over the network, connected to the TV, and driven by a controller.
+
+<Aside type="caution" title="Draft outline">
+To write: parts list, wired network, BIOS/NIC steps for Wake-on-LAN from full shutdown, Windows Fast Startup note, how to test WoL from a phone.
+</Aside>
+
+## You need
+
+- A Windows 11 PC, wired to your router (Wake-on-LAN is unreliable over Wi-Fi)
+- A TV or monitor with HDMI
+- A controller and how it connects (Bluetooth or wireless adapter)
+
+## Steps
+
+1. TODO: enable Wake-on-LAN in the BIOS
+2. TODO: enable it in the Windows network adapter settings
+3. TODO: fast startup on or off, and what it changes
+
+## Verify
+
+Shut the PC down completely, send a magic packet from another device, and confirm it boots.
+
+## If it breaks
+
+TODO: common causes (ErP/deep power-saving BIOS options, adapter settings, router VLANs)

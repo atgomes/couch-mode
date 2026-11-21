@@ -1,0 +1,31 @@
+/* Couch Mode theme: first pass. Colors, one retro font for titles, nothing heavier. */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+	--cm-pixel-font: 'Press Start 2P', ui-monospace, monospace;
+
+	/* dark theme (default) */
+	--sl-color-accent-low: #0c3a2c;
+	--sl-color-accent: #14a37f;
+	--sl-color-accent-high: #8de5c9;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #c8f1e3;
+	--sl-color-accent: #0b7a5e;
+	--sl-color-accent-high: #064634;
+}
+
+/* Pixel font only where it is short: site title and hero title. Body stays readable. */
+.site-title,
+.hero h1 {
+	font-family: var(--cm-pixel-font);
+	letter-spacing: 0.02em;
+}
+.hero h1 {
+	font-size: clamp(1.6rem, 5vw, 2.6rem);
+	line-height: 1.3;
+}
+.site-title {
+	font-size: 0.8rem;
+}

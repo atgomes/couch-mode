@@ -1,0 +1,63 @@
+---
+title: Windows as a home console
+description: Turn a Windows PC into a home console.
+template: splash
+hero:
+  title: Couch Mode
+  tagline: Turn on the TV. The PC wakes up and boots straight into your games. Controller only, no keyboard.
+  actions:
+    - text: Start level 1
+      link: /couch-mode/levels/hardware/
+      icon: right-arrow
+    - text: See the setup
+      link: /couch-mode/why-this-setup/
+      icon: information
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What you get
+
+- **Console boot:** power on the TV and the PC is in a fullscreen launcher a few seconds later.
+- **No login screen:** no password, no keyboard.
+- **One library:** Steam, Epic and GOG in a single controller-friendly UI.
+- **Play from anywhere:** stream to a phone or Steam Deck, with the picture sized correctly for each screen.
+
+## The levels
+
+<CardGrid>
+	<Card title="1 · Hardware & BIOS" icon="laptop">
+		What you need, and the Wake-on-LAN switches that make everything else work.
+	</Card>
+	<Card title="2 · Boot to couch" icon="power">
+		Local account, no password, no sleep surprises, no update reboots.
+	</Card>
+	<Card title="3 · Launcher" icon="rocket">
+		Playnite in fullscreen, starting by itself, with all your stores connected.
+	</Card>
+	<Card title="4 · Controller" icon="star">
+		Make the controller do everything, including the desktop.
+	</Card>
+	<Card title="5 · Wake on TV" icon="seti:tv">
+		Optional. Home Assistant powers the PC when the TV switches to its input.
+	</Card>
+	<Card title="6 · Stream anywhere" icon="external">
+		Moonlight and Apollo, with a virtual display per device.
+	</Card>
+	<Card title="7 · Polish" icon="magnifier">
+		HDR, audio switching and the small details.
+	</Card>
+</CardGrid>
+
+## My setup
+
+| Part | What I use |
+| --- | --- |
+| GPU | RTX 5070 Ti (was an RTX 4060) |
+| TV | LG B5 OLED (webOS) |
+| Controller | Xbox controller |
+| Automation | Home Assistant |
+| Streaming | Apollo + Moonlight |
+
+Your hardware doesn't need to match. Each level says what is specific to mine.
